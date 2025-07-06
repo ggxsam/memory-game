@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #52796f;
+}
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background: white;
+  padding: 40px 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+h2 {
+  font-size: 2rem;
+  color: #2f3e46;
+  text-align: center;
+}
+.reset {
+  padding: 15px 20px;
+
+  background: rgb(49, 16, 16);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.reset:hover {
+  color: rgb(11, 2, 2);
+  background: rgb(194, 177, 177);
+}
+
+.game{
+  width: 440px;
+  height: 440px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  transform-style: preserve-3d;
+  perspective:500
+}
+
+.item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+}
+
+.item img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  display: none;
+}
+
+.item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #2f3e46;
+  transition: 0.5s;
+  backface-visibility: hidden;
+}
+
+.boxOpen {
+  transform: rotateY(180deg);
+}
+.boxOpen img{
+  display: block;
+}
+
+.victory-banner{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+}
+.banner-content {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease-out;
+}
+
+.banner-content h2 {
+  color: #4CAF50;
+  margin: 0 0 20px 0;
+  font-size: 2.5em;
+}
+.banner-content p {
+  margin: 0 0 30px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.banner-content button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.banner-content button:hover {
+  background: #45a049;
+}
+.boxMatch{
+  background: #45a049;
+}

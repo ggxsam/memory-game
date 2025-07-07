@@ -14,6 +14,7 @@ var shuffledArray = pairedArray.sort(() => Math.random() - 0.5);
 
 
 let openedCards = [];
+let moves=0;
 
 for(var i=0; i<shuffledArray.length; i++){
   let box = document.createElement("div");
@@ -65,4 +66,6 @@ function checkMatch() {
   }
   
   openedCards = [];
+  moves++;
+  document.querySelector('.moves').innerText = `Moves: ${moves}`;
 }
